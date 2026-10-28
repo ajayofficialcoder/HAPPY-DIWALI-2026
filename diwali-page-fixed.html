@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#17103b">
+  <title>✨ Happy Diwali 2026 — Apne Naam Se Bhejein 🪔</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Rozha+One&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      min-height: 100vh; padding: 22px 14px; overflow-x: hidden;
+      background: radial-gradient(circle at top, #49316e 0%, #17103b 55%, #09051d 100%);
+      color: #fff; font-family: 'Poppins', sans-serif; text-align: center;
+    }
+    .container {
+      width: min(100%, 500px); margin: 14px auto; padding: 26px 22px;
+      background: rgba(255,255,255,.08); backdrop-filter: blur(12px);
+      border: 1px solid rgba(255,215,0,.55); border-radius: 24px;
+      box-shadow: 0 0 34px rgba(255,165,0,.22);
+    }
+    .eyebrow { color: #ffd66b; letter-spacing: 3px; font-size: .78rem; font-weight: 700; }
+    h1 {
+      margin: 8px 0; color: #ffd700; font-family: 'Rozha One', serif;
+      font-size: clamp(2rem, 8vw, 2.8rem); line-height: 1.2;
+      text-shadow: 0 0 16px rgba(255,215,0,.45);
+    }
+    .subtitle { color: #ffe9a6; margin: 8px 0 14px; }
+    .diya { font-size: 5rem; display: block; margin: 8px auto; animation: glow 1.6s ease-in-out infinite alternate; }
+    @keyframes glow { from { filter: drop-shadow(0 0 5px #ff6b00); transform: translateY(0); } to { filter: drop-shadow(0 0 22px #ffd700); transform: translateY(-4px); } }
+    .wish-box { margin: 20px 0; padding: 18px 14px; border: 1px dashed #ffd700; border-radius: 16px; background: rgba(0,0,0,.28); }
+    .wish-box p { line-height: 1.75; }
+    .sender-name { margin: 10px 0; color: #65ffe1; font-size: clamp(1.6rem, 7vw, 2.2rem); font-weight: 700; overflow-wrap: anywhere; text-shadow: 0 0 12px rgba(0,255,204,.35); }
+    .form-label { display: block; margin-bottom: 8px; color: #ffe9a6; font-weight: 600; }
+    input {
+      display: block; width: 100%; margin: 0 0 12px; padding: 14px 16px;
+      border: 2px solid #ffd700; border-radius: 30px; outline: none;
+      background: rgba(255,255,255,.1); color: #fff; text-align: center; font: inherit;
+    }
+    input::placeholder { color: #ddd; }
+    .btn {
+      width: 100%; border: 0; border-radius: 30px; padding: 14px 18px; margin: 5px 0;
+      color: #fff; font: 600 1rem 'Poppins', sans-serif; cursor: pointer; transition: transform .2s;
+    }
+    .btn:hover { transform: translateY(-2px); }
+    .primary { background: linear-gradient(45deg, #ff416c, #ff4b2b); box-shadow: 0 4px 15px rgba(255,65,108,.25); }
+    .whatsapp { background: linear-gradient(45deg, #128c4a, #25d366); }
+    .hint { margin-top: 12px; color: #ddd; font-size: .82rem; line-height: 1.6; }
+    footer { margin-top: 18px; color: #c9c2e4; font-size: .78rem; }
+  </style>
+</head>
+<body>
+  <main class="container">
+    <div class="eyebrow">✨ SHUBH DEEPAVALI ✨</div>
+    <h1>Happy Diwali 2026</h1>
+    <p class="subtitle">Khushiyon aur roshni ka tyohar 🪔</p>
+    <span class="diya" aria-label="Diya">🪔</span>
+
+    <section class="wish-box" aria-live="polite">
+      <p>आपको और आपके परिवार को दीपावली की हार्दिक शुभकामनाएँ!</p>
+      <p class="sender-name" id="senderName">Aapka Naam</p>
+      <p>आपका जीवन खुशियों, स्वास्थ्य, सफलता और समृद्धि से रोशन रहे। ✨</p>
+    </section>
+
+    <label class="form-label" for="nameInput">Apna naam likhein:</label>
+    <input id="nameInput" type="text" maxlength="40" placeholder="Yahan apna naam likhein" autocomplete="name">
+    <button class="btn primary" id="updateBtn" type="button">✨ Wish Personalize Karein</button>
+    <button class="btn whatsapp" id="shareBtn" type="button">WhatsApp par Wish Bhejein</button>
+    <p class="hint">Apna naam likhkar wish personalize karein, phir WhatsApp par family aur friends ko bhejein.</p>
+    <footer>Made with ❤️ for Diwali 2026</footer>
+  </main>
+
+  <script>
+    const nameInput = document.getElementById('nameInput');
+    const senderName = document.getElementById('senderName');
+
+    function personalizeWish() {
+      const name = nameInput.value.trim();
+      senderName.textContent = name || 'Aapka Naam';
+    }
+
+    document.getElementById('updateBtn').addEventListener('click', personalizeWish);
+    nameInput.addEventListener('keydown', (event) => {
+      if (event.key === 'Enter') personalizeWish();
+    });
+
+    document.getElementById('shareBtn').addEventListener('click', () => {
+      const name = nameInput.value.trim() || 'Aapka Naam';
+      const message = `🪔 Happy Diwali 2026! ✨\n\nआपको और आपके परिवार को दीपावली की हार्दिक शुभकामनाएँ!\n\nDher saari khushiyan, sehat aur safalta mile. 🌟\n\nPyaar aur shubhkamnaon ke saath, ${name}`;
+      window.open('https://wa.me/?text=' + encodeURIComponent(message), '_blank', 'noopener,noreferrer');
+    });
+  </script>
+</body>
+</html>
